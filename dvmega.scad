@@ -1,15 +1,22 @@
+// DVmega case maker
+// Made by PD0ZRY
+
+//Make the Case
 difference() {
-  enclosure(MEGA,3,3,10+13,3,TAPHOLE);
-  translate([30,0,30]){
-     rotate([90,90,0]) cylinder(h=8,r1=5,r2=5);
+  enclosure(MEGA,3,3,10+5,3,TAPHOLE); // basic box with tapholes
+  translate([32,0,30]){
+     rotate([90,90,0]) cylinder(h=8,r1=7,r2=7); // RF connector
   }
-  translate([8,140,8+1.7]) cube([8,10,11]);
-  translate([8+17,155,8+6+1.7]) rotate([90,90,0]) cylinder(h=10,r1=5,r2=5);
-  translate([8+17+9,140,8+1.7]) cube([12,14,15]);
+  translate([32-7,-10,30]){
+     cube([14,14,10]);
+  }
+  translate([6,140,8+1.7]) cube([11,10,11]); //lf power
+  translate([8+16,155,8+6+1.7]) rotate([90,90,0]) cylinder(h=10,r1=5,r2=5); //lf out
+  translate([8+17+7,140,8+1.7]) cube([12,14,15]); //mic in
 }
 
-
-//enclosureLid(DUE);
+//Make the lid
+//rotate([0,180,0]) enclosureLid(DUE);
 
 
 
@@ -478,8 +485,8 @@ megaHoles = [
 		[  50.8, 13.97 ],
 		[  2.54, 90.17 ],
 		[  50.8, 96.52 ],
-        [  2.54, 96.52+42 ],
-		[  50.8, 96.52+42 ]
+        [  2.54, 96.52+40 ],
+		[  49, 96.52+40 ]
 		];
 
 boardHoles = [ 
